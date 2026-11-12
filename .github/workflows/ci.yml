@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test on Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Verify Python Syntax (py_compile)
+        run: |
+          python3 -m py_compile src/lh_jetson_telemetry_guard/*.py tests/*.py
+
+      - name: Execute Test Suite (unittest)
+        run: |
+          PYTHONPATH=src python3 -m unittest discover -s tests -v
+
+      - name: Install Package in Editable Mode
+        run: |
+          pip install .
+
+      - name: CLI Smoke Tests
+        run: |
+          lh-telemetry-guard --version
+          lh-telemetry-guard --help
+          lh-telemetry-guard scan fixtures/hardened_jetson_bsp.json --format table
+          lh-telemetry-guard scan fixtures/hardened_jetson_bsp.json --format json
+          lh-telemetry-guard scan fixtures/hardened_jetson_bsp.json --format sarif
+          lh-telemetry-guard gen-firewall --allow-cidr 192.168.10.0/24 --output /tmp/egress.nft
+          lh-telemetry-guard gen-ebpf --allow-cidr 192.168.10.0/24 --output /tmp/egress_filter.bpf.c
+          lh-telemetry-guard gen-sinkhole --output /tmp/telemetry_hosts
+          # Vulnerable policy audit should exit 1
+          lh-telemetry-guard scan fixtures/vulnerable_jetson_bsp.json || test $? -eq 1
+          # Egress flow with violations should exit 1
+          lh-telemetry-guard analyze-egress fixtures/sample_egress_flow.json || test $? -eq 1

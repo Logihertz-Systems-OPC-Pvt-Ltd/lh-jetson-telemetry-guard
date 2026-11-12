@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lh-jetson-telemetry-guard"
+version = "0.1.0"
+description = "NVIDIA Jetson L4T / Embedded BSP Outbound Telemetry Blocker, eBPF & nftables Egress Filter Generator, DNS Sinkhole Builder, and 10-Rule Sovereign Air-Gap Posture Auditor"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [
+  { name = "logihertzsystems", email = "ops@logihertz.com" },
+  { name = "Sameer Tawade (Creator, Founder, Director & Sole Developer)", email = "ops@logihertz.com" }
+]
+maintainers = [
+  { name = "Sameer Tawade", email = "security@logihertz.com" }
+]
+keywords = [
+  "nvidia-jetson",
+  "tegra",
+  "l4t",
+  "telemetry-blocker",
+  "ebpf",
+  "nftables",
+  "dns-sinkhole",
+  "shannon-entropy",
+  "air-gap",
+  "bsp-security",
+  "sarif"
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+  "Topic :: System :: Networking :: Firewalls",
+  "Topic :: System :: Operating System Kernels :: Linux"
+]
+dependencies = []
+
+[project.scripts]
+lh-telemetry-guard = "lh_jetson_telemetry_guard.cli:main"
+
+[project.urls]
+Homepage = "https://logihertz.com/"
+Repository = "https://github.com/Logihertz-Systems-OPC-Pvt-Ltd/lh-jetson-telemetry-guard"
+Issues = "https://github.com/Logihertz-Systems-OPC-Pvt-Ltd/lh-jetson-telemetry-guard/issues"
+Changelog = "https://github.com/Logihertz-Systems-OPC-Pvt-Ltd/lh-jetson-telemetry-guard/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["lh_jetson_telemetry_guard*"]

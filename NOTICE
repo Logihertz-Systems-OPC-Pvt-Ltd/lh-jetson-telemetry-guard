@@ -1,0 +1,22 @@
+Logihertz Jetson Telemetry Guard (lh-jetson-telemetry-guard)
+Copyright (c) 2026 Logihertz Systems (OPC) Private Limited. All Rights Reserved.
+
+This product includes software developed by Logihertz Systems (OPC) Private Limited
+(https://logihertz.com/).
+
+Creator, Founder, Director & Sole Developer:
+  Sameer Tawade <ops@logihertz.com> / <security@logihertz.com>
+
+Corporate Entity:
+  Logihertz Systems (OPC) Private Limited
+  CIN: U72900MH2022OPC385552
+  Mumbai, Maharashtra, India
+
+Product:
+  lh-jetson-telemetry-guard (CLI: lh-telemetry-guard)
+  NVIDIA Jetson L4T / Embedded BSP Outbound Telemetry Blocker,
+  eBPF & nftables Egress Filter Generator, DNS Sinkhole Builder,
+  and 10-Rule Sovereign Air-Gap Posture Auditor.
+
+This software is released under the Apache License, Version 2.0.
+See the LICENSE file for details.

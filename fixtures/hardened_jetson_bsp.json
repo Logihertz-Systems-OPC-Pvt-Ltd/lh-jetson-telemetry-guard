@@ -1,0 +1,27 @@
+{
+  "system_identifier": "orin-sovereign-node-01",
+  "organization": "Logihertz Systems (OPC) Private Limited",
+  "lead_architect": "Sameer Tawade",
+  "active_telemetry_services": [],
+  "egress_default_policy": "DROP",
+  "ebpf_socket_guard_enabled": true,
+  "telemetry_domains_sinkholed": true,
+  "blocked_hosts_count": 20,
+  "unattended_upgrades_enabled": false,
+  "apt_daily_timer_enabled": false,
+  "motd_news_enabled": false,
+  "connectivity_check_enabled": false,
+  "external_dns_allowed": false,
+  "dns_servers": [
+    "192.168.10.2",
+    "192.168.10.3"
+  ],
+  "snapd_enabled": false,
+  "cloud_init_phone_home_enabled": false,
+  "docker_telemetry_disabled": true,
+  "cuda_telemetry_opt_out": true,
+  "coredump_external_upload": false,
+  "fs_suid_dumpable": 0,
+  "egress_drop_logging_enabled": true,
+  "public_ntp_pool_used": false
+}

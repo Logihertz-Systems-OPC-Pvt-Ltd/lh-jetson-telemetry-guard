@@ -1,0 +1,31 @@
+{
+  "system_identifier": "stock-l4t-developer-kit",
+  "organization": "Unverified Test Setup",
+  "lead_architect": "Untrusted",
+  "active_telemetry_services": [
+    "whoopsie.service",
+    "apport.service",
+    "nv-telemetry.service"
+  ],
+  "egress_default_policy": "ACCEPT",
+  "ebpf_socket_guard_enabled": false,
+  "telemetry_domains_sinkholed": false,
+  "blocked_hosts_count": 0,
+  "unattended_upgrades_enabled": true,
+  "apt_daily_timer_enabled": true,
+  "motd_news_enabled": true,
+  "connectivity_check_enabled": true,
+  "external_dns_allowed": true,
+  "dns_servers": [
+    "8.8.8.8",
+    "1.1.1.1"
+  ],
+  "snapd_enabled": true,
+  "cloud_init_phone_home_enabled": true,
+  "docker_telemetry_disabled": false,
+  "cuda_telemetry_opt_out": false,
+  "coredump_external_upload": true,
+  "fs_suid_dumpable": 2,
+  "egress_drop_logging_enabled": false,
+  "public_ntp_pool_used": true
+}

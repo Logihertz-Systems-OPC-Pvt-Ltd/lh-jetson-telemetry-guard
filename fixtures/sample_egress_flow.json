@@ -1,0 +1,45 @@
+{
+  "device_id": "jetson-orin-edge-node",
+  "dns_queries": [
+    {
+      "fqdn": "telemetry.nvidia.com",
+      "timestamp": 1700000000.0,
+      "query_type": "A"
+    },
+    {
+      "fqdn": "a9f4b2c8d1e7f09a8b7c6d5e4f3a2b1c.covert-channel.org",
+      "timestamp": 1700000010.0,
+      "query_type": "TXT"
+    },
+    {
+      "fqdn": "api.internal.local",
+      "timestamp": 1700000020.0,
+      "query_type": "A"
+    }
+  ],
+  "socket_flows": [
+    {
+      "dst_ip": "198.51.100.42",
+      "dst_port": 443,
+      "protocol": "TCP",
+      "timestamps": [
+        1700000000.0,
+        1700000030.0,
+        1700000060.0,
+        1700000090.0,
+        1700000120.0
+      ]
+    },
+    {
+      "dst_ip": "192.168.10.5",
+      "dst_port": 50051,
+      "protocol": "TCP",
+      "timestamps": [
+        1700000001.0,
+        1700000014.2,
+        1700000089.5,
+        1700000142.1
+      ]
+    }
+  ]
+}
