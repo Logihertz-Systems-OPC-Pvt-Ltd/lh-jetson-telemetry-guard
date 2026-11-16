@@ -1,0 +1,9 @@
+Package: lh-jetson-telemetry-guard
+Version: 0.1.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Sameer Tawade <ops@logihertz.com>
+Homepage: https://www.logihertz.com
+Description: lh-telemetry-guard - Shannon Entropy of Outbound DNS & Default-Drop Filter
+ NVIDIA Jetson L4T & embedded BSP outbound telemetry blocker generating cgroup/connect4 eBPF socket filters, default-drop nftables air-gap rulesets, /etc/hosts sinkholes, and DNS entropy exfiltration alerts.
